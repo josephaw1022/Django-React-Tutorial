@@ -69,6 +69,7 @@
            {item.title}
          </span>
          <span>
+           
            <button
              onClick={() => this.editItem(item)}
              className="btn btn-secondary mr-2"
