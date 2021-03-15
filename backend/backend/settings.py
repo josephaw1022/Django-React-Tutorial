@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '65(q5+y7cx3o_y6z#yn(_nv+e#0%1@=%rnls)7ahr^i0c)-)8e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["https://django-react-tutorial.vercel.app/"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',            # add this
     'rest_framework',         # add this
-    'todo' # add this
-  ]
+    'todo'  # add this
+]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',    # add this
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
 
