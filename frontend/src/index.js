@@ -4,7 +4,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import "bootstrap/dist/css/bootstrap.min.css" // add this
 import "./index.css"
-import App from "./App/App"
+import App from "./App/App.jsx"
 import { store } from "./Redux/store";
 import { Provider } from "react-redux";
 // import * as serviceWorker from './serviceWorker';

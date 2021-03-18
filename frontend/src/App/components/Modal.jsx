@@ -16,20 +16,41 @@ import {
 export default class CustomModal extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
+      // This is where the modal component inherits the activeItem state from App.jsx
       activeItem: this.props.activeItem,
     }
   }
+
+
+  // Function to handle change based on event 
   handleChange = (e) => {
     let { name, value } = e.target
+    // if the event is a checkbox, then let value equal checked
     if (e.target.type === "checkbox") {
       value = e.target.checked
     }
+
+    /* 
+    activeItem is inheriting the activeItem state from our local state,
+    in which our local state is inherited from the App.jsx component 
+     */
+    
     const activeItem = { ...this.state.activeItem, [name]: value }
+    
+
+    // This is done because activeItem is passed with ... which changes a singular attribute of an object within a state 
     this.setState({ activeItem })
   }
+
+
   render() {
+
+    // toggle is the this.toggle function from App.jsx 
+    // onSave prop is the.handleSubmit function from App.jsx 
     const { toggle, onSave } = this.props
+
     return (
       <Modal isOpen={true} toggle={toggle}>
         <ModalHeader toggle={toggle}> Todo Item </ModalHeader>
@@ -48,7 +69,7 @@ export default class CustomModal extends Component {
             <FormGroup>
               <Label for="description">Description</Label>
               <Input
-                type="text"
+                type="text" 
                 name="description"
                 value={this.state.activeItem.description}
                 onChange={this.handleChange}
