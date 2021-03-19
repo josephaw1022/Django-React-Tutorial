@@ -39,8 +39,12 @@ export default class CustomModal extends Component {
     
     const activeItem = { ...this.state.activeItem, [name]: value }
     
+    
 
-    // This is done because activeItem is passed with ... which changes a singular attribute of an object within a state 
+    /*
+    This is done with this syntax because activeItem is passed with our spread operator 
+    which changes a singular attribute of an object within a state
+     */ 
     this.setState({ activeItem })
   }
 
