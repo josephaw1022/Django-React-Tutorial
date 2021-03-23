@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "65(q5+y7cx3o_y6z#yn(_nv+e#0%1@=%rnls)7ahr^i0c)-)8e"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["https://django-react-tutorial.vercel.app"]
 
