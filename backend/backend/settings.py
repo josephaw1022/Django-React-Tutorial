@@ -25,7 +25,7 @@ SECRET_KEY = "65(q5+y7cx3o_y6z#yn(_nv+e#0%1@=%rnls)7ahr^i0c)-)8e"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://django-react-tutorial.vercel.app"]
+ALLOWED_HOSTS = ["https://django-react-tutorial.vercel.app/"]
 
 
 # Application definition
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "corsheaders",
+    "corsheaders",  # add this
     "rest_framework",
     "todo",
 ]
