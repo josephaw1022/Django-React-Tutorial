@@ -25,7 +25,7 @@ import React, { Component } from "react";
    // Function to handle the fetching of the backend api to refresh the list 
    refreshList = () => {
      axios
-       .get("http://localhost:8000/api/todos/")
+       .get("https://django-react-tutorial.vercel.app/api/todos/")
        .then(res => this.setState({ todoList: res.data }))
        .catch(err => console.log(err));
    };
@@ -124,13 +124,13 @@ import React, { Component } from "react";
      // If already in the database and simply editing the item, then just put the item in 'item's id' location in the DB 
      if (item.id) {
        axios
-         .put(`http://localhost:8000/api/todos/${item.id}/`, item)
+         .put(`https://django-react-tutorial.vercel.app/api/todos/${item.id}/`, item)
          .then(res => this.refreshList());
        return;
      }
      // Api call to the backend to post a new object in the database 
      axios
-       .post("http://localhost:8000/api/todos/", item)
+       .post("https://django-react-tutorial.vercel.app/api/todos/", item)
        .then(res => this.refreshList());
    };
 
@@ -140,7 +140,7 @@ import React, { Component } from "react";
    handleDelete = item => {
     //  Api call to the backend to delete an object from the list using axios 
      axios
-       .delete(`http://localhost:8000/api/todos/${item.id}`)
+       .delete(`https://django-react-tutorial.vercel.app/api/todos/${item.id}`)
        // Once deleted this will run the refreshList function which will fetch all the items from api 
        .then(res => this.refreshList());
    };
